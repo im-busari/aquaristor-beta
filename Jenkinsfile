@@ -4,15 +4,13 @@ pipeline {
             label 'docker-agent-alpine'
             }
       }
-    triggers {
-        pollSCM 'H* * * * *'
-    }
     stages {
         stage('Build') {
             steps {
                 echo "Building.."
                 sh '''
                 cd web
+                echo "Building project."
                 '''
             }
         }
